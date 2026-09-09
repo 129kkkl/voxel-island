@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>空岛禅寺 — Voxel Zen Temple</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #1a1025; }
+    canvas { display: block; }
+    #info {
+      position: fixed; top: 16px; left: 16px; z-index: 10;
+      color: #f0e6d2; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      text-shadow: 0 1px 4px rgba(0,0,0,.6); pointer-events: none;
+    }
+    #info h1 { font-size: 20px; font-weight: 400; letter-spacing: 4px; }
+    #info p { font-size: 12px; opacity: .7; margin-top: 4px; letter-spacing: 1px; }
+    #controls {
+      position: fixed; bottom: 16px; right: 16px; z-index: 10;
+      display: flex; gap: 8px;
+    }
+    #controls button {
+      background: rgba(30,20,40,.55); color: #f0e6d2; border: 1px solid rgba(240,230,210,.3);
+      padding: 8px 16px; font-family: inherit; font-size: 12px; cursor: pointer;
+      border-radius: 2px; letter-spacing: 1px; backdrop-filter: blur(4px);
+      transition: background .2s;
+    }
+    #controls button:hover { background: rgba(60,40,80,.7); }
+    #loading {
+      position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center;
+      background: #1a1025; color: #f0e6d2; font-family: serif; font-size: 14px; letter-spacing: 3px;
+      transition: opacity .8s;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">構築中…</div>
+  <div id="info">
+    <h1>空 島 禅 寺</h1>
+    <p>拖拽旋转 · 滚轮缩放 · 右键平移</p>
+  </div>
+  <div id="controls">
+    <button id="btnRotate">自动旋转: 开</button>
+    <button id="btnPetals">樱花: 开</button>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
